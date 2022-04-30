@@ -11,7 +11,7 @@ scrape_configs:
       - port: 9100 # referred to nodeExporter exposed port
 
         filters:
-        - name: aws:autoscaling:groupName
+        - name: tag:aws:autoscaling:groupName
           values:
           - ecs-autoscaling-group
   - job_name: ecs_CAdvisor
@@ -19,7 +19,7 @@ scrape_configs:
       - port: 9200 # referred to cAdvisor exposed port
 
         filters:
-        - name: aws:autoscaling:groupName
+        - name: tag:aws:autoscaling:groupName
           values:
           - ecs-autoscaling-group
 
